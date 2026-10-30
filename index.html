@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f2a2e">
+    <meta name="description"
+        content="Majestic Construction Company — thoughtful construction, remodeling and property improvement in Cincinnati, Ohio. Contact us to discuss your project.">
+    <title>Majestic Construction Company | Cincinnati, OH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --green: #0f2a2e;
+            --green2: #1c4045;
+            --gold: #d4a24c;
+            --gold-hover: #e0b262;
+            --gold-soft: #f0d9ae;
+            --cream: #f7f4ee;
+            --ink: #1a2422;
+            --muted: #5f6b66;
+            --white: #fff;
+            --line: #e6e3db;
+            --shadow: 0 18px 55px rgba(15, 42, 46, .14);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--ink);
+            background: #fff;
+            line-height: 1.65
+        }
+
+        h1,
+        h2,
+        h3,
+        .brand {
+            font-family: Manrope, sans-serif;
+            letter-spacing: -.035em;
+            line-height: 1.12
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 44px));
+            margin: auto
+        }
+
+        .topbar {
+            background: #0a1c1f;
+            color: #e8ece7;
+            font-size: 13px;
+            padding: 9px 0
+        }
+
+        .topbar .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        .topbar a:hover {
+            color: var(--gold-soft)
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, .96);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(0, 0, 0, .06)
+        }
+
+        .nav {
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--green)
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--gold);
+            display: grid;
+            place-items: center;
+            color: var(--gold);
+            font-family: Manrope;
+            font-weight: 800;
+            font-size: 21px;
+            transform: rotate(45deg)
+        }
+
+        .brand-mark span {
+            transform: rotate(-45deg)
+        }
+
+        .brand small {
+            display: block;
+            font: 600 9px 'DM Sans';
+            letter-spacing: .19em;
+            color: #6f7a75;
+            margin-top: 3px
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            font-size: 14px;
+            font-weight: 600
+        }
+
+        .nav-links a:hover {
+            color: var(--gold)
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 21px;
+            border: 1px solid transparent;
+            background: var(--gold);
+            color: #0f1d1f;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: .02em;
+            transition: .25s;
+            cursor: pointer
+        }
+
+        .btn:hover {
+            background: var(--gold-hover);
+            transform: translateY(-2px)
+        }
+
+        .btn-dark {
+            background: var(--green);
+            color: #fff
+        }
+
+        .btn-dark:hover {
+            background: var(--green2)
+        }
+
+        .btn-outline {
+            border-color: rgba(255, 255, 255, .55);
+            background: transparent;
+            color: #fff
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: var(--green)
+        }
+
+        .menu-btn {
+            display: none;
+            border: 0;
+            background: none;
+            font-size: 25px;
+            color: var(--green);
+            cursor: pointer
+        }
+
+        .hero {
+            background: var(--green);
+            color: white;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(9, 26, 29, .95) 0%, rgba(15, 42, 46, .8) 48%, rgba(15, 42, 46, .2) 100%);
+            z-index: 1
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 55%
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            padding: 90px 0
+        }
+
+        .hero-copy {
+            max-width: 680px
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-transform: uppercase;
+            letter-spacing: .19em;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gold-soft);
+            margin-bottom: 22px
+        }
+
+        .eyebrow:before {
+            content: "";
+            width: 38px;
+            height: 1px;
+            background: var(--gold)
+        }
+
+        h1 {
+            font-size: clamp(42px, 6vw, 76px);
+            font-weight: 700;
+            margin-bottom: 24px
+        }
+
+        h1 em {
+            font-style: normal;
+            color: var(--gold-hover)
+        }
+
+        .hero-copy p {
+            max-width: 550px;
+            color: #dfe6e2;
+            font-size: 17px;
+            margin-bottom: 34px
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap
+        }
+
+        .hero-note {
+            margin-top: 55px;
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+            color: #dfe6e2;
+            font-size: 12px
+        }
+
+        .hero-note strong {
+            display: block;
+            color: white;
+            font: 700 22px Manrope
+        }
+
+        .section {
+            padding: 105px 0
+        }
+
+        .section-soft {
+            background: var(--cream)
+        }
+
+        .section-head {
+            max-width: 660px;
+            margin-bottom: 48px
+        }
+
+        .kicker {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: .18em;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 14px
+        }
+
+        h2 {
+            font-size: clamp(32px, 4vw, 49px);
+            color: var(--green);
+            margin-bottom: 17px
+        }
+
+        .section-head p,
+        .muted {
+            color: var(--muted)
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 75px;
+            align-items: center
+        }
+
+        .about-image {
+            position: relative;
+            padding: 0 30px 30px 0
+        }
+
+        .about-image img {
+            height: 510px
+        }
+
+        .image-accent {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background: var(--gold);
+            color: #0f1d1f;
+            padding: 24px 28px;
+            max-width: 205px;
+            font-weight: 700;
+            font-family: Manrope
+        }
+
+        .about-copy p {
+            color: var(--muted);
+            margin: 18px 0
+        }
+
+        .checks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 13px;
+            margin: 28px 0
+        }
+
+        .checks span {
+            font-weight: 600;
+            font-size: 14px
+        }
+
+        .checks span:before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: 800;
+            margin-right: 10px
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px
+        }
+
+        .service-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            transition: .3s
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow)
+        }
+
+        .service-card img {
+            height: 220px
+        }
+
+        .service-body {
+            padding: 25px
+        }
+
+        .service-number {
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .15em
+        }
+
+        .service-body h3 {
+            font-size: 21px;
+            color: var(--green);
+            margin: 10px 0
+        }
+
+        .service-body p {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 18px
+        }
+
+        .text-link {
+            font-size: 13px;
+            font-weight: 700;
+            color: #a97b2c
+        }
+
+        .text-link:hover {
+            text-decoration: underline
+        }
+
+        .feature-band {
+            background: var(--green);
+            color: white;
+            padding: 76px 0
+        }
+
+        .feature-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 35px
+        }
+
+        .feature-inner h2 {
+            color: white;
+            max-width: 620px;
+            margin: 0
+        }
+
+        .feature-inner p {
+            color: #cfd9d4;
+            margin-top: 13px;
+            max-width: 590px
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 34px
+        }
+
+        .process-item {
+            border-top: 1px solid #c9cfc7;
+            padding-top: 23px
+        }
+
+        .process-item .num {
+            font: 700 35px Manrope;
+            color: var(--gold)
+        }
+
+        .process-item h3 {
+            font-size: 20px;
+            color: var(--green);
+            margin: 13px 0
+        }
+
+        .process-item p {
+            font-size: 14px;
+            color: var(--muted)
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr 1fr;
+            grid-template-rows: 220px 220px;
+            gap: 14px
+        }
+
+        .gallery-grid img {
+            height: 100%;
+            width: 100%
+        }
+
+        .gallery-grid img:first-child {
+            grid-row: span 2
+        }
+
+        .gallery-grid img:last-child {
+            grid-column: span 2
+        }
+
+        .contact-wrap {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 60px;
+            align-items: start
+        }
+
+        .contact-info {
+            background: var(--green);
+            color: white;
+            padding: 38px
+        }
+
+        .contact-info h2 {
+            color: white;
+            font-size: 36px
+        }
+
+        .contact-info>p {
+            color: #d0dad5;
+            margin: 14px 0 35px
+        }
+
+        .contact-line {
+            padding: 17px 0;
+            border-top: 1px solid rgba(255, 255, 255, .17)
+        }
+
+        .contact-line small {
+            display: block;
+            color: var(--gold-soft);
+            text-transform: uppercase;
+            letter-spacing: .13em;
+            font-size: 10px;
+            margin-bottom: 4px
+        }
+
+        .contact-line a,
+        .contact-line span {
+            font-weight: 600
+        }
+
+        .form-card {
+            padding: 8px 0
+        }
+
+        .form-card h3 {
+            font-size: 28px;
+            color: var(--green);
+            margin-bottom: 9px
+        }
+
+        .form-card>p {
+            color: var(--muted);
+            margin-bottom: 25px
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 17px
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 7px
+        }
+
+        .field.full {
+            grid-column: 1/-1
+        }
+
+        label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #3d4a45
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #dfe3dc;
+            background: #fff;
+            outline: none;
+            color: var(--ink);
+            border-radius: 0
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 162, 76, .16)
+        }
+
+        textarea {
+            min-height: 125px;
+            resize: vertical
+        }
+
+        .form-note {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 12px
+        }
+
+        .form-status {
+            font-size: 13px;
+            color: var(--green);
+            font-weight: 700;
+            margin-top: 12px;
+            min-height: 20px
+        }
+
+        footer {
+            background: #0a1c1f;
+            color: #d9e0da;
+            padding: 32px 0
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 12px
+        }
+
+        .footer-inner a {
+            color: var(--gold-soft)
+        }
+
+        .mobile-cta {
+            display: none
+        }
+
+        @media(max-width:900px) {
+            .nav-links {
+                gap: 16px
+            }
+
+            .about-grid {
+                gap: 38px
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .contact-wrap {
+                gap: 35px
+            }
+        }
+
+        @media(max-width:700px) {
+            .container {
+                width: min(100% - 34px, 560px)
+            }
+
+            .topbar .container {
+                justify-content: center;
+                text-align: center
+            }
+
+            .topbar .top-right {
+                display: none
+            }
+
+            .nav {
+                height: 70px
+            }
+
+            .menu-btn {
+                display: block
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #fff;
+                padding: 18px 24px 25px;
+                box-shadow: 0 15px 25px rgba(0, 0, 0, .08);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0
+            }
+
+            .nav-links.open {
+                display: flex
+            }
+
+            .nav-links a {
+                padding: 12px 0;
+                border-bottom: 1px solid var(--line)
+            }
+
+            .nav-cta {
+                display: none
+            }
+
+            .hero-content {
+                min-height: 620px;
+                padding: 75px 0
+            }
+
+            .hero:before {
+                background: linear-gradient(90deg, rgba(9, 26, 29, .94), rgba(15, 42, 46, .64))
+            }
+
+            .hero-copy p {
+                font-size: 15px
+            }
+
+            .hero-note {
+                margin-top: 42px;
+                gap: 20px
+            }
+
+            .hero-note strong {
+                font-size: 19px
+            }
+
+            .section {
+                padding: 75px 0
+            }
+
+            .about-grid,
+            .contact-wrap {
+                grid-template-columns: 1fr;
+                gap: 35px
+            }
+
+            .about-image img {
+                height: 380px
+            }
+
+            .about-copy {
+                order: -1
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr
+            }
+
+            .service-card img {
+                height: 230px
+            }
+
+            .feature-inner {
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .feature-band {
+                padding: 58px 0
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 27px
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 180px 180px 180px
+            }
+
+            .gallery-grid img:first-child {
+                grid-row: span 2
+            }
+
+            .gallery-grid img:last-child {
+                grid-column: span 2
+            }
+
+            .contact-info {
+                padding: 29px
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr
+            }
+
+            .field.full {
+                grid-column: auto
+            }
+
+            .mobile-cta {
+                display: flex;
+                position: fixed;
+                z-index: 60;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: #fff;
+                padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
+                box-shadow: 0 -5px 20px rgba(0, 0, 0, .1);
+                gap: 9px
+            }
+
+            .mobile-cta a {
+                flex: 1;
+                padding: 12px 8px;
+                font-size: 12px
+            }
+
+            .mobile-cta .btn-outline {
+                background: white;
+                color: var(--green);
+                border-color: var(--green)
+            }
+
+            footer {
+                padding-bottom: 85px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="container"><span>Cincinnati, Ohio · Building with purpose</span><span class="top-right">Call us: <a
+                    href="tel:+15134328218">+1 (513) 432-8218</a></span></div>
+    </div>
+    <header>
+        <div class="container nav">
+            <a class="brand" href="#home" aria-label="Majestic Construction home"><span
+                    class="brand-mark"><span>M</span></span><span>MAJESTIC<small>CONSTRUCTION COMPANY</small></span></a>
+            <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+            <nav class="nav-links" id="navLinks"><a href="#home">Home</a><a href="#about">About</a><a
+                    href="#services">Services</a><a href="#process">Our Process</a><a href="#contact">Contact</a></nav>
+            <a class="btn btn-dark nav-cta" href="#contact">Get a Free Consultation ↗</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO: construction workers building a house -->
+        <section class="hero" id="home">
+            <img class="hero-bg"
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=85"
+                alt="Construction workers building a house">
+            <div class="container hero-content">
+                <div class="hero-copy">
+                    <div class="eyebrow">Majestic Construction Company · Cincinnati, OH</div>
+                    <h1>Build your vision.<br><em>Make it majestic.</em></h1>
+                    <p>Thoughtful construction and property improvement, shaped around your goals. Let's turn the space
+                        you've imagined into a place you're proud of.</p>
+                    <div class="hero-actions"><a class="btn" href="#contact">Discuss Your Project ↗</a><a
+                            class="btn btn-outline" href="tel:+15134328218">Call +1 513-432-8218</a></div>
+                    <div class="hero-note">
+                        <div><strong>Personal</strong>Project-focused service</div>
+                        <div><strong>Purposeful</strong>Thoughtful planning</div>
+                        <div><strong>Cincinnati</strong>Ohio-based</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT: residential renovation / interior -->
+        <section class="section" id="about">
+            <div class="container about-grid">
+                <div class="about-image"><img
+                        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+                        alt="Bright contemporary residential interior after renovation">
+                    <div class="image-accent">A better space starts with a better plan.</div>
+                </div>
+                <div class="about-copy">
+                    <div class="kicker">Who we are</div>
+                    <h2>Construction with care, from first idea to final detail.</h2>
+                    <p>At Majestic Construction Company, we believe every successful project begins with listening.
+                        Whether you're planning a property improvement, a renovation or a new construction project,
+                        we're here to understand your priorities and help you take the next step.</p>
+                    <p>Our goal is to make the process clear, collaborative and focused on the result you want.</p>
+                    <div class="checks"><span>Clear communication</span><span>Practical
+                            planning</span><span>Client-focused approach</span><span>Attention to detail</span></div>
+                    <a class="btn btn-dark" href="#contact">Tell Us About Your Project ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES: matched images per service type -->
+        <section class="section section-soft" id="services">
+            <div class="container">
+                <div class="section-head">
+                    <div class="kicker">What we do</div>
+                    <h2>Solutions for the spaces that matter.</h2>
+                    <p>Tell us what you have in mind. We'll discuss your requirements and help identify the right way
+                        forward.</p>
+                </div>
+                <div class="services-grid">
+                    <!-- Residential Construction: workers building house -->
+                    <article class="service-card"><img
+                            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+                            alt="Construction workers building a residential house">
+                        <div class="service-body"><span class="service-number">01 / BUILD</span>
+                            <h3>Residential Construction</h3>
+                            <p>Bring your ideas for a new home or residential project into a clear, considered plan.</p>
+                            <a class="text-link" href="#contact">Discuss a build ↗</a>
+                        </div>
+                    </article>
+                    <!-- Remodeling & Renovation: modern living room interior -->
+                    <article class="service-card"><img
+                            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80"
+                            alt="Modern renovated living room interior">
+                        <div class="service-body"><span class="service-number">02 / RENEW</span>
+                            <h3>Remodeling & Renovation</h3>
+                            <p>Reimagine existing spaces with improvements that suit your lifestyle and property.</p><a
+                                class="text-link" href="#contact">Plan a renovation ↗</a>
+                        </div>
+                    </article>
+                    <!-- Interior Improvements: modern interior with kitchen -->
+                    <article class="service-card"><img
+                            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80"
+                            alt="Modern home interior with refined finishes">
+                        <div class="service-body"><span class="service-number">03 / IMPROVE</span>
+                            <h3>Interior Improvements</h3>
+                            <p>Explore practical updates to make your interior feel more functional and refined.</p><a
+                                class="text-link" href="#contact">Improve your space ↗</a>
+                        </div>
+                    </article>
+                    <!-- Exterior Improvements: house exterior with curb appeal -->
+                    <article class="service-card"><img
+                            src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=80"
+                            alt="Beautiful house exterior with strong curb appeal">
+                        <div class="service-body"><span class="service-number">04 / ENHANCE</span>
+                            <h3>Exterior Improvements</h3>
+                            <p>Consider updates that refresh curb appeal and help your property make a strong first
+                                impression.</p><a class="text-link" href="#contact">Explore exterior work ↗</a>
+                        </div>
+                    </article>
+                    <!-- Property Improvements: open plan property interior -->
+                    <article class="service-card"><img
+                            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80"
+                            alt="Open plan property interior ready for improvement">
+                        <div class="service-body"><span class="service-number">05 / PLAN</span>
+                            <h3>Property Improvements</h3>
+                            <p>Discuss ways to make your property work better for its next chapter.</p><a
+                                class="text-link" href="#contact">Talk through ideas ↗</a>
+                        </div>
+                    </article>
+                    <!-- Project Consultation: construction site / planning -->
+                    <article class="service-card"><img
+                            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80"
+                            alt="Construction site planning and consultation">
+                        <div class="service-body"><span class="service-number">06 / COLLABORATE</span>
+                            <h3>Project Consultation</h3>
+                            <p>Start with a conversation about your goals, timeline and the scope of your project.</p><a
+                                class="text-link" href="#contact">Book a conversation ↗</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-band">
+            <div class="container feature-inner">
+                <div>
+                    <div class="kicker">Your project, your priorities</div>
+                    <h2>Let's make your next construction project feel straightforward.</h2>
+                    <p>Share a few details and speak directly with Majestic Construction Company about what comes next.
+                    </p>
+                </div><a class="btn" href="#contact">Start a Conversation ↗</a>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="section" id="process">
+            <div class="container">
+                <div class="section-head">
+                    <div class="kicker">How it works</div>
+                    <h2>A clear path from idea to action.</h2>
+                    <p>Every project is different. This simple starting process helps us understand what matters to you.
+                    </p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-item">
+                        <div class="num">01</div>
+                        <h3>Tell us what you need</h3>
+                        <p>Reach out with your project idea, property details and the outcome you're hoping to achieve.
+                        </p>
+                    </div>
+                    <div class="process-item">
+                        <div class="num">02</div>
+                        <h3>Discuss the details</h3>
+                        <p>We'll connect to learn more about the scope, priorities, timing and next steps.</p>
+                    </div>
+                    <div class="process-item">
+                        <div class="num">03</div>
+                        <h3>Plan your next move</h3>
+                        <p>Move forward with a clearer understanding of the project and how to proceed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY: construction and renovation related images -->
+        <section class="section section-soft">
+            <div class="container">
+                <div class="section-head">
+                    <div class="kicker">Spaces & inspiration</div>
+                    <h2>Ideas worth building on.</h2>
+                    <p>A visual glimpse of residential design and construction inspiration.</p>
+                </div>
+                <div class="gallery-grid">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80"
+                        alt="Construction workers on residential building site">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80"
+                        alt="Modern kitchen renovation inspiration">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80"
+                        alt="Renovated living room interior">
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1000&q=80"
+                        alt="Residential home exterior after improvement">
+                </div>
+                <p class="form-note">Note: These are illustrative stock photos, not verified photographs of completed
+                    Majestic Construction Company projects.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section" id="contact">
+            <div class="container contact-wrap">
+                <aside class="contact-info">
+                    <div class="kicker">Let's talk</div>
+                    <h2>Have a project in mind?</h2>
+                    <p>Tell us a little about it. Call or send your project details and start a conversation.</p>
+                    <div class="contact-line"><small>Phone</small><a href="tel:+15134328218">+1 (513) 432-8218</a></div>
+                    <div class="contact-line"><small>Address</small><span>4884 Winton Rd Apt 36<br>Cincinnati, OH 45232,
+                            United States</span></div>
+                    <div class="contact-line"><small>Service area</small><span>Cincinnati, Ohio and surrounding
+                            areas<br><small style="text-transform:none;letter-spacing:0;color:#d0dad5">Please confirm
+                                project coverage when you call.</small></span></div>
+                    <a class="btn" style="margin-top:22px;width:100%"
+                        href="https://www.google.com/maps/search/?api=1&query=4884+Winton+Rd+Apt+36+Cincinnati+OH+45232"
+                        target="_blank" rel="noopener">Get Directions ↗</a>
+                </aside>
+                <div class="form-card">
+                    <div class="kicker">Contact form</div>
+                    <h3>Let's discuss your project.</h3>
+                    <p>Complete the form and we'll prepare a message you can send directly through WhatsApp.</p>
+                    <form id="contactForm">
+                        <div class="form-grid">
+                            <div class="field"><label for="name">Your name *</label><input id="name" name="name"
+                                    required placeholder="Full name"></div>
+                            <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone"
+                                    required type="tel" placeholder="(555) 000-0000"></div>
+                            <div class="field"><label for="email">Email address</label><input id="email" name="email"
+                                    type="email" placeholder="you@example.com"></div>
+                            <div class="field"><label for="service">Project type</label><select id="service"
+                                    name="service">
+                                    <option value="">Select a service</option>
+                                    <option>Residential construction</option>
+                                    <option>Remodeling / renovation</option>
+                                    <option>Interior improvements</option>
+                                    <option>Exterior improvements</option>
+                                    <option>Property improvements</option>
+                                    <option>Project consultation</option>
+                                    <option>Other</option>
+                                </select></div>
+                            <div class="field full"><label for="message">Tell us about your project *</label><textarea
+                                    id="message" name="message" required
+                                    placeholder="What would you like to build, renovate or improve?"></textarea></div>
+                            <div class="field full"><button class="btn btn-dark" type="submit">Send Project Enquiry via
+                                    WhatsApp ↗</button></div>
+                        </div>
+                        <p class="form-note">Submitting opens WhatsApp with your message ready to send. Your details are
+                            not stored on this demo website.</p>
+                        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner"><a class="brand" href="#home" style="color:#fff"><span
+                    class="brand-mark"><span>M</span></span><span>MAJESTIC<small style="color:#b7c2bc">CONSTRUCTION
+                        COMPANY</small></span></a><span>© <span id="year"></span> Majestic Construction Company. All
+                rights reserved.</span><span>Cincinnati, Ohio · <a href="tel:+15134328218">513-432-8218</a></span></div>
+    </footer>
+    <div class="mobile-cta"><a class="btn btn-outline" href="tel:+15134328218">☎ Call Now</a><a class="btn btn-dark"
+            href="#contact">Get a Quote ↗</a></div>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+        menuBtn.addEventListener('click', () => { const open = navLinks.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', String(open)); menuBtn.textContent = open ? '✕' : '☰'; });
+        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.textContent = '☰'; }));
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!this.reportValidity()) return;
+            const data = new FormData(this);
+            const lines = [
+                'Hello Majestic Construction Company, I would like to discuss a project.',
+                '',
+                'Name: ' + data.get('name'),
+                'Phone: ' + data.get('phone'),
+                'Email: ' + (data.get('email') || 'Not provided'),
+                'Project type: ' + (data.get('service') || 'Not specified'),
+                'Project details: ' + data.get('message')
+            ];
+            document.getElementById('formStatus').textContent = 'Opening WhatsApp with your enquiry…';
+            const url = 'https://wa.me/15134328218?text=' + encodeURIComponent(lines.join('\n'));
+            window.open(url, '_blank', 'noopener,noreferrer');
+        });
+    </script>
+</body>
+
+</html>
